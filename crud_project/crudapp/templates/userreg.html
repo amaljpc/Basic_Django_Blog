@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br>
+<div class="container ">
+    <h3>User Registration Form</h3><br><br>
+    <form method="POST" action="" >
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input class="btn btn-success" type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}

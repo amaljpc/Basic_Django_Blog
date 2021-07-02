@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+<body>
+<br><br>
+<table class="table table-bordered" id="card-table">
+    <thead>
+      <tr>
+    <th>Id</th>
+    <th>author</th>
+    <th>Description</th>
+    <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for card in cards %}
+        <tr>
+          <td>{{ card.id }}</td>
+          <td>{{ card.author }}</td>
+          <td>{{ card.title }}</td>
+          <td>{{ card.description }}</td>
+<!--      <td>-->
+<!--          <a href="{% url 'update' id=card.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>-->
+<!--          <a href="{% url 'delete' id=card.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a>-->
+<!--      </td>-->
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4" class="text-center bg-warning">No Card</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+<!--'''{% if request.user.is_staff %}-->
+<!--<table border="2">-->
+<!--    <tr>-->
+<!--        <th>Name</th>-->
+<!--        <th>Author</th>-->
+<!--        <th>Publisher</th>-->
+<!--        <th>Price</th>-->
+<!--    </tr>-->
+<!--    {% for i in form %}-->
+<!--    <tr>-->
+<!--        <td>{{ i.tit }}</td>-->
+<!--        <td>{{ i.author }}</td>-->
+<!--        <td>{{ i.publisher }}</td>-->
+<!--        <td>{{ i.price }}</td>-->
+<!--        <td><a href="{% url 'delete' i.id %}">Delete</a> </td>-->
+<!--        <td><a href="{% url 'edit' i.id %}">Edit</a> </td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
+<!-- {% endif %}'''-->
+</body>
+{% endblock %}
